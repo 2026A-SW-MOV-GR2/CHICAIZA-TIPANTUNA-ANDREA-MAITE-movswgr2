@@ -1,0 +1,51 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Mi Biblioteca" class="action-bar">
+        <ActionItem ios.position="right" android.position="actionBar">
+            <StackLayout orientation="horizontal" verticalAlignment="center" width="145">
+                <Label text="NoSQL " class="label-form" verticalAlignment="center" color="white" />
+                <Switch checked="{{ useSql }}" checkedChange="onSwitchMode" color="#EADDFF" backgroundColor="#FFFFFF" verticalAlignment="center"/>
+                <Label text=" SQL" class="label-form" verticalAlignment="center" color="white" />
+            </StackLayout>
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto, auto, *, auto">
+        <StackLayout row="0" class="badge" horizontalAlignment="center" backgroundColor="{{ useSql ? '#EADDFF' : '#FFD8E4' }}">
+            <Label text="{{ useSql ? 'Modo: Relacional (SQLite)' : 'Modo: No Relacional (JSON/NoSQL)' }}" class="badge-text" />
+        </StackLayout>
+
+        <GridLayout row="1" columns="*, *" padding="10">
+            <Button col="0" text="Fake API (REST)" tap="onNavigateToRest" class="btn-primary" margin="5" />
+            <Button col="1" text="Seguridad" tap="onNavigateToSecurity" class="btn-primary" margin="5" />
+        </GridLayout>
+
+        <!-- Lista -->
+        <ListView items="{{ books }}" row="2" separatorColor="transparent">
+            <ListView.itemTemplate>
+                <GridLayout padding="5" backgroundColor="transparent">
+                    <GridLayout columns="auto, *, auto" class="card" tap="{{ onItemAction }}">
+
+                        <Image col="0" src="{{ image }}" width="60" height="90" stretch="aspectFill" borderRadius="8" />
+
+                        <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+                            <Label text="{{ title }}" class="title" textWrap="true" />
+                            <Label text="{{ author }}" class="author" />
+
+                            <StackLayout orientation="horizontal" class="badge" horizontalAlignment="left">
+                                <Label text="{{ status === 'Leído' ? '&#xf058;' : (status === 'Leyendo' ? '&#xf518;' : '&#xf017;') }}"
+                                    class="fa badge-icon" verticalAlignment="center" />
+                                <Label text="{{ status }}" class="badge-text" verticalAlignment="center" marginLeft="4" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <Label col="2" text="&#xf2ed;" class="fa btn-delete" tap="{{ onDeleteAction }}" verticalAlignment="center" padding="10" />
+
+                    </GridLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- FAB  -->
+        <Label row="2" text="&#xf067;" class="fa fab" tap="onAddBook" horizontalAlignment="right" verticalAlignment="bottom" margin="16" />
+    </GridLayout>
+</Page>

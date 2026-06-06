@@ -1,0 +1,89 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="{{ id ? 'Editar Libro' : 'Nuevo Libro' }}" class="action-bar">
+        <NavigationButton text="Volver" android.systemIcon="ic_menu_back" tap="onBack" />
+        <ActionItem ios.position="right" android.position="actionBar">
+            <StackLayout orientation="horizontal" verticalAlignment="center" width="145">
+                <Label text="NoSQL " class="label-form" verticalAlignment="center" color="white" />
+                <Switch checked="{{ useSql }}" checkedChange="onSwitchMode" color="#EADDFF" backgroundColor="#FFFFFF" verticalAlignment="center"/>
+                <Label text=" SQL" class="label-form" verticalAlignment="center" color="white" />
+            </StackLayout>
+        </ActionItem>
+    </ActionBar>
+
+    <ScrollView>
+    
+        <StackLayout padding="20">
+            <StackLayout row="0" class="badge" horizontalAlignment="center" backgroundColor="{{ useSql ? '#EADDFF' : '#FFD8E4' }}" marginBottom="20">
+                <Label text="{{ useSql ? 'Modo: Relacional (SQLite)' : 'Modo: No Relacional (JSON/NoSQL)' }}" class="badge-text" />
+            </StackLayout>
+
+            <GridLayout columns="*, auto, auto, *" rows="auto" marginBottom="25" horizontalAlignment="center">
+                <StackLayout col="1" tap="{{ onSelectImage }}" verticalAlignment="middle">
+                    <Image src="{{ previewImage }}" stretch="aspectFit" height="150"/>
+                    <Label text="Cambiar" class="lbl-hint" horizontalAlignment="center" />
+                </StackLayout>
+
+                <StackLayout col="2" verticalAlignment="middle" marginLeft="30">
+                    <Label text="Favorito" class="m3-label-static" marginBottom="5" />
+                    <Switch checked="{{ isFavorite }}" color="#6750A4" />
+                </StackLayout>
+            </GridLayout>
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <TextField text="{{ title }}" class="m3-field" />
+                <Label text="Título del Libro" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <TextField text="{{ author }}" class="m3-field" />
+                <Label text="Autor" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <StackLayout class="m3-picker-container">
+                    <ListPicker items="{{ categories }}" selectedIndex="0" class="m3-picker" />
+                </StackLayout>
+                <Label text="Categoría" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <TextView text="{{ description }}" class="m3-field m3-area" />
+                <Label text="Descripción" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <StackLayout marginBottom="20">
+                <Label text="Estado de lectura" class="m3-label-static" marginLeft="4" marginBottom="8" />
+                <GridLayout columns="*, *, *" class="segmented-container-final">
+                    <Button col="0" text="Pendiente" tap="{{ setStatus }}" data="Pendiente"
+                        class="{{ status === 'Pendiente' ? 'btn-final-on' : 'btn-final-off' }}" />
+                    <Button col="1" text="Leyendo" tap="{{ setStatus }}" data="Leyendo"
+                        class="{{ status === 'Leyendo' ? 'btn-final-on' : 'btn-final-off' }}" />
+                    <Button col="2" text="Leído" tap="{{ setStatus }}" data="Leído"
+                        class="{{ status === 'Leído' ? 'btn-final-on' : 'btn-final-off' }}" />
+                </GridLayout>
+            </StackLayout>
+
+            <StackLayout visibility="{{ status !== 'Pendiente' ? 'visible' : 'collapsed' }}">
+                <GridLayout rows="auto" class="m3-input-wrapper" tap="{{ onPickStartDate }}">
+                    <GridLayout columns="*, auto" class="m3-field-display">
+                        <Label col="0" text="{{ startDateText }}" class="txt-date-display" />
+                        <Label col="1" text="&#xf133;" class="fa m3-icon-inline" />
+                    </GridLayout>
+                    <Label text="Fecha de Inicio" class="m3-label" horizontalAlignment="left" />
+                </GridLayout>
+            </StackLayout>
+
+            <StackLayout visibility="{{ status === 'Leído' ? 'visible' : 'collapsed' }}">
+                <GridLayout rows="auto" class="m3-input-wrapper" tap="{{ onPickEndDate }}">
+                    <GridLayout columns="*, auto" class="m3-field-display">
+                        <Label col="0" text="{{ endDateText }}" class="txt-date-display" />
+                        <Label col="1" text="&#xf133;" class="fa m3-icon-inline" />
+                    </GridLayout>
+                    <Label text="Fecha de Finalización" class="m3-label" horizontalAlignment="left" />
+                </GridLayout>
+            </StackLayout>
+
+            <Button text="GUARDAR LIBRO" tap="onSave" class="btn-submit-form" />
+        </StackLayout>
+    </ScrollView>
+</Page>

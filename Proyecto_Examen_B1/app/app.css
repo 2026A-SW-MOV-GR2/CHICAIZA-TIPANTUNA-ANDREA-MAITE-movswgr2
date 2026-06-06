@@ -1,0 +1,390 @@
+﻿.fa {
+    /* Priorizamos el nombre del archivo sin la extensión para Android */
+    font-family: "Font Awesome 7 Free-Solid-900", "Font Awesome 7 Free";
+    font-weight: 900;
+}
+
+/* Colores Material 3 */
+.page { background-color: #FEF7FF; }
+.action-bar { background-color: #6750A4; color: white; }
+
+/* Icon fonts */
+.fa {
+    font-family: "Font Awesome 7 Free-Solid-900", "Font Awesome 7 Free";
+    font-weight: 900;
+}
+.icon { font-family: "Material Icons", "MaterialIcons-Regular"; }
+
+/* Colores y fondo global */
+.page { background-color: #FEF7FF; }
+.action-bar { background-color: #6750A4; color: white; }
+
+/* Card (Material 3 look) */
+.card {
+    background-color: #FFFFFF;
+    margin: 4 12;
+    padding: 16;
+    border-radius: 20;
+    elevation: 4;
+    android-elevation: 4;
+    /* iOS shadow */
+    shadowColor: #000;
+    shadowOffset: 0, 2;
+    shadowOpacity: 0.1;
+    shadowRadius: 3;
+}
+
+/* Typography */
+.title { font-weight: bold; color: #1C1B1F; font-size: 16; }
+.author { color: #49454F; font-size: 14; }
+
+/* Badges */
+.badge {
+    background-color: #EADDFF;
+    color: #21005D;
+    border-radius: 12;
+    padding: 4 12;
+    margin-top: 6;
+    horizontalAlignment: left;
+    verticalAlignment: middle;
+}
+.badge-icon { font-size: 14; margin-right: 6; color: #21005D; }
+.badge-text { font-size: 12; font-weight: bold; color: #21005D; }
+
+/* Buttons & FAB */
+.btn-delete { color: #BA1A1A; font-size: 20; }
+.fab {
+    background-color: #6750A4; color: #FFFFFF;
+    height: 60; width: 60; border-radius: 30;
+    font-size: 24; text-align: center; vertical-align: middle;
+    elevation: 8; margin-right: 20; margin-bottom: 20;
+}
+
+.input { border-bottom-width: 1; border-bottom-color: #6750A4; margin-bottom: 10; }
+
+/* General-purpose buttons */
+.btn-primary { background-color: #6750A4; color: white; border-radius: 25; height: 50; font-weight: bold; elevation: 2; }
+.btn-outline-sm { background-color: transparent; border-width: 1; border-color: #6750A4; color: #6750A4; border-radius: 20; font-size: 12; margin-top: 10; padding: 5 15; }
+.btn-date { background-color: #EADDFF; color: #21005D; border-radius: 8; margin-bottom: 10; }
+
+/* Form labels and inputs */
+.label-form { color: #6750A4; font-size: 13; font-weight: bold; margin-bottom: 5; margin-left: 4; }
+.lbl-form { color: #6750A4; font-size: 14; font-weight: bold; margin: 10 0 5 2; }
+.lbl-hint { font-size: 10; color: #6750A4; margin-top: 2; font-style: italic; }
+
+.input-outlined { border-width: 1; border-color: #79747E; border-radius: 4; padding: 12 15; background-color: white; color: #1C1B1F; }
+.txt-outlined { border-width: 1; border-color: #79747E; border-radius: 4; padding: 10; margin-bottom: 5; background-color: white; }
+.txt-area-outlined { border-width: 1; border-color: #79747E; border-radius: 4; padding: 10; height: 100; background-color: white; }
+
+/* Purple outlined inputs used in forms */
+.txt-purple-outlined { border-width: 1.5; border-color: #6750A4; border-radius: 4; padding: 12; background-color: white; margin-bottom: 5; }
+.txt-area-purple { border-width: 1.5; border-color: #6750A4; border-radius: 4; padding: 10; height: 65; background-color: white; }
+
+/* Pickers */
+.picker-style { height: 100; background-color: #F3EDF7; border-radius: 4; margin-bottom: 5; }
+.picker-container-white, .picker-container, .picker-outline, .picker-container-fixed {
+    border-width: 1.5; border-color: #6750A4; border-radius: 4; background-color: white; overflow: hidden; padding: 1;
+}
+.picker-custom, .picker-element { height: 100; color: #6750A4; background-color: white; }
+.picker-inner { height: 100; color: #6750A4; background-color: transparent; }
+
+/* Change photo button */
+.btn-change-photo { background-color: #EADDFF; color: #6750A4; border-radius: 20; font-size: 13; padding: 5 15; border-width: 1; border-color: #6750A4; elevation: 0; }
+
+/* Segmented controls (clean, unified) */
+.segmented-container, .custom-segmented-bar, .segmented-bar-clean, .segmented-outline, .segmented-container-final, .segmented-outline {
+    border-width: 1.5; border-color: #6750A4; border-radius: 4; background-color: white; overflow: hidden; elevation: 0; margin: 2 0;
+}
+
+.segmented-container-fixed {
+    border-width: 1.5;
+    border-color: #6750A4;
+    border-radius: 4;
+    background-color: white;
+    padding: 1; /* Evita que el lila "salte" sobre el borde morado */
+    overflow: hidden;
+    elevation: 0;
+}
+
+.btn-active, .btn-inactive, .btn-on, .btn-off, .btn-state-on, .btn-state-off, .state-btn-active, .state-btn-inactive, .btn-final-on, .btn-final-off {
+    border-width: 0; margin: 0; padding: 0; height: 50; elevation: 0; android-elevation: 0; border-radius: 0; background-image: none; min-width: 0;
+}
+
+.btn-on, .btn-state-on, .state-btn-active, .btn-final-on {
+    background-color: #EADDFF; color: #21005D; font-weight: bold;
+}
+.btn-off, .btn-state-off, .state-btn-inactive, .btn-final-off {
+    background-color: white; color: #6750A4;
+}
+.btn-final-off[col="1"], .btn-final-off[col="2"], .btn-final-on[col="1"], .btn-final-on[col="2"], .btn-inactive[col="1"], .btn-inactive[col="2"] {
+    border-left-width: 1; border-left-color: #EADDFF;
+}
+
+/* Fine tune for segmented active edges */
+.btn-final-on[col="0"] { border-top-left-radius: 25; border-bottom-left-radius: 25; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.btn-final-on[col="1"] { border-radius: 0; }
+.btn-final-on[col="2"] { border-top-right-radius: 25; border-bottom-right-radius: 25; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+/* Small cover styles */
+.book-cover-preview { width: 140; height: 200; border-radius: 12; background-color: #F3EDF7; }
+.book-cover-small { width: 100; height: 140; border-radius: 12; background-color: #EADDFF; elevation: 2; }
+.book-cover-mini { width: 80; height: 110; border-radius: 10; background-color: #EADDFF; elevation: 2; }
+
+/* Misc */
+.preview-img { width: 100; height: 150; border-radius: 12; background-color: #EADDFF; }
+Switch { margin-left: 0; }
+
+/* Date picker button */
+.btn-picker-styled { border-width: 1.5; border-color: #6750A4; border-radius: 4; background-color: white; height: 52; padding: 0 15; vertical-alignment: middle; ripple-color: #EADDFF; }
+.icon-calendar { color: #6750A4; font-size: 20; margin-right: 12; vertical-alignment: middle; }
+.txt-date-display { color: #1C1B1F; font-size: 15; vertical-alignment: middle; }
+.btn-picker-styled:active { background-color: #F3EDF7; }
+
+/* Submit button used in forms */
+.btn-submit-form { background-color: #6750A4; color: white; border-radius: 25; height: 50; font-weight: bold; margin-top: 25; elevation: 2; }
+
+/* Delete button tweak (size) */
+.btn-delete { color: #BA1A1A; font-size: 20; }
+
+/* Small adjustments preserved from original */
+.label-form, .lbl-form { color: #6750A4; }
+
+/* End of consolidated CSS */
+
+
+
+/* Efecto visual al tocar (opcional para Android) */
+.btn-picker-styled:active {
+    background-color: #F3EDF7;
+}
+
+/* Esto asegura que el icono y el texto se vean morados como los botones del popup */
+.icon-calendar {
+    color: #6750A4;
+    font-size: 20;
+    margin-right: 12;
+}
+
+.btn-picker-styled {
+    border-width: 1.5;
+    border-color: #6750A4;
+    border-radius: 12;
+    background-color: white;
+    height: 52;
+    padding: 0 15;
+    vertical-alignment: middle;
+    /* Efecto de presión para que el usuario sepa que es un botón */
+    ripple-color: #EADDFF;
+}
+
+.btn-delete {
+    color: #BA1A1A; /* Rojo para indicar peligro/borrado */
+    font-size: 20;
+}
+
+.btn-final-on, .btn-final-off {
+    height: 45;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-radius: 0; /* Importante: el radio lo da el contenedor padre */
+    elevation: 0;
+    android-elevation: 0;
+    font-size: 13;
+    /* Esto elimina el sombreado interno de Android */
+    background-image: none;
+}
+
+/* Estado ACTIVO: Color lila que llena el espacio */
+.btn-final-on {
+    background-color: #EADDFF;
+    color: #21005D;
+    font-weight: bold;
+}
+
+/* Estado INACTIVO: Fondo transparente para que NO tape los bordes morados */
+.btn-final-off {
+    background-color: transparent;
+    color: #6750A4;
+}
+
+/* Divisores internos (opcional) */
+.btn-final-off[col="1"], .btn-final-off[col="2"],
+.btn-final-on[col="1"], .btn-final-on[col="2"] {
+    border-left-width: 1;
+    border-left-color: #EADDFF;
+}
+
+
+/**/
+/* Contenedor principal */
+.m3-input-container {
+    margin: 5 0;
+}
+
+/* Estilo del TextField (Input) */
+
+/* Estado Focus (Morado Material) */
+.m3-field:focus {
+    border-width: 2;
+    border-color: #6750A4;
+}
+
+/* Cambiar color del label cuando el input tiene focus */
+.m3-field:focus + .m3-label {
+    color: #6750A4;
+    font-weight: bold;
+}
+.m3-input-wrapper {
+    /* 1. Aumentamos drásticamente el espacio superior del contenedor */
+    padding-top: 15;
+
+    /* 2. Evitamos que cualquier sistema recorte lo que sobresale */
+    clipChildren: false;
+    margin-bottom: 12;
+}
+
+.m3-field {
+    border-width: 1.5;
+    border-color: #6750A4;
+    border-radius: 4;
+    padding: 12 15;
+    font-size: 16;
+    color: #1C1B1F;
+    background-color: transparent;
+    /* Aseguramos que no haya márgenes internos extra que empujen el texto */
+    margin: 0;
+}
+
+.m3-label {
+    color: #6750A4;
+    font-size: 12;
+    font-weight: bold;
+    background-color: #FEF7FF;
+    margin-left: 12;
+    padding: 0 4;
+    vertical-alignment: top;
+    transform: translateY(-2);
+
+}
+/* Estado de Error (opcional) */
+.m3-field.error {
+    border-color: #B3261E;
+}
+.m3-field.error + .m3-label {
+    color: #B3261E;
+}
+
+.m3-field, .m3-field-display, .m3-picker-container {
+    margin-top: 5;
+}
+/* Configuración Base */
+.page { background-color: #FEF7FF; }
+.action-bar { background-color: #6750A4; color: white; }
+.fa { font-family: "Font Awesome 7 Free-Solid-900", "Font Awesome 7 Free"; font-weight: 900; }
+
+/* Contenedor del Floating Label */
+.m3-input-wrapper {
+    padding-top: 10;
+    margin-bottom: 12;
+    clipChildren: false;
+}
+
+/* Campos de entrada (TextField, TextView, Contenedores de Fecha) */
+.m3-field, .m3-field-display, .m3-picker-container {
+    border-width: 1.5;
+    border-color: #79747E; /* Color M3 neutral outline */
+    border-radius: 4;
+    padding: 12 16;
+    font-size: 16;
+    color: #1C1B1F;
+    background-color: transparent;
+}
+
+/* Altura para TextView */
+.m3-area {
+    height: 100;
+}
+
+/* Cuadro de respuesta JSON del API */
+.m3-json-output {
+    height: 160;
+    background-color: #FFFFFF;
+    border-color: #6750A4;
+    border-radius: 12;
+    color: #1C1B1F;
+}
+
+/* Ajuste para el ListPicker interno */
+.m3-picker {
+    height: 80;
+    color: #6750A4;
+}
+.m3-picker-container {
+    padding: 0;
+}
+
+/* La Etiqueta Flotante */
+.m3-label {
+    color: #6750A4;
+    font-size: 12;
+    font-weight: bold;
+    background-color: #FEF7FF; /* Match con .page background */
+    margin-left: 12;
+    padding: 0 4;
+    vertical-alignment: top;
+    margin-top: 0;
+
+}
+
+/* Labels que no flotan (favorito, estado) */
+.m3-label-static {
+    color: #6750A4;
+    font-size: 14;
+    font-weight: bold;
+}
+
+/* Icono dentro del input */
+.m3-icon-inline {
+    color: #6750A4;
+    font-size: 18;
+    vertical-alignment: middle;
+}
+
+/* Estados Focus */
+.m3-field:focus {
+    border-color: #6750A4;
+    border-width: 2;
+}
+
+/* Segmented Control M3 */
+.segmented-container-final {
+    border-width: 1.5;
+    border-color: #6750A4;
+    border-radius: 21;
+    background-color: white;
+    overflow: hidden;
+}
+
+.btn-final-on { background-color: #EADDFF; color: #21005D; font-weight: bold; border-radius: 0; }
+.btn-final-off { background-color: transparent; color: #000000; border-radius: 0; }
+
+/* Botón Guardar */
+.btn-submit-form {
+    background-color: #6750A4;
+    color: white;
+    border-radius: 25;
+    height: 56;
+    font-weight: bold;
+    margin-top: 20;
+    elevation: 3;
+}
+
+/* Preview Image */
+.book-cover-mini {
+    width: 80;
+    height: 110;
+    border-radius: 12;
+    background-color: #EADDFF;
+    elevation: 2;
+}

@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="REST API JSONPlaceholder" class="action-bar">
+        <NavigationButton text="Volver" android.systemIcon="ic_menu_back" tap="onBack" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout padding="20">
+            <!-- GET Section -->
+            <Label text="Consulta un Post" class="m3-label-static" marginBottom="10" />
+            <GridLayout columns="*, auto" rows="auto" class="m3-input-wrapper">
+                <TextField col="0" text="{{ searchId }}" hint="ID del post (ej. 1)" keyboardType="number" 
+                    isEnabled="{{ !isLoading }}" class="m3-field" />
+                <Button col="1" text="Obtener" tap="{{ onGetPost }}" isEnabled="{{ !isLoading }}" class="btn-primary" marginLeft="10" />
+            </GridLayout>
+
+            <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible' : 'collapsed' }}" />
+
+            <StackLayout visibility="{{ postLoaded ? 'visible' : 'collapsed' }}" marginTop="20">
+                <Label text="Actualizar Post" class="m3-label-static" marginBottom="10" />
+
+                <GridLayout rows="auto" class="m3-input-wrapper">
+                    <TextField text="{{ title }}" isEnabled="{{ !isLoading }}" class="m3-field" />
+                    <Label text="Título" class="m3-label" horizontalAlignment="left" />
+                </GridLayout>
+
+                <GridLayout rows="auto" class="m3-input-wrapper">
+                    <TextView text="{{ body }}" isEnabled="{{ !isLoading }}" class="m3-field m3-area" />
+                    <Label text="Contenido" class="m3-label" horizontalAlignment="left" />
+                </GridLayout>
+
+                <Button text="Actualizar" tap="{{ onUpdatePost }}" isEnabled="{{ !isLoading }}" class="btn-submit-form" />
+
+                <StackLayout visibility="{{ responseJson ? 'visible' : 'collapsed' }}" marginTop="20">
+                    <Label text="Respuesta JSON" class="m3-label-static" marginBottom="8" />
+                    <TextView text="{{ responseJson }}" isEditable="false" class="m3-field m3-area m3-json-output" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

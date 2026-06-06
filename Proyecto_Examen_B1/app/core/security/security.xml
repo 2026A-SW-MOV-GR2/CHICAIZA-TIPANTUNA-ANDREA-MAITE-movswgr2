@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Seguridad y Configuración" class="action-bar">
+        <NavigationButton text="Volver" android.systemIcon="ic_menu_back" tap="onBack" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout padding="20">
+            <Label text="Gestión de Secretos" class="m3-label-static" marginBottom="20" />
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <TextField text="{{ secretKey }}" class="m3-field" />
+                <Label text="Llave (Key)" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <TextField text="{{ secretValue }}" hint="Dejar vacío para Recuperar" class="m3-field" />
+                <Label text="Valor (Value)" class="m3-label" horizontalAlignment="left" />
+            </GridLayout>
+
+            <Label text="Mecanismo Nativo (Android)" class="m3-label-static" marginBottom="10" marginTop="10" />
+
+            <GridLayout rows="auto" class="m3-input-wrapper">
+                <StackLayout class="m3-picker-container">
+                    <ListPicker items="{{ mechanisms }}" selectedIndex="{{ selectedMechanismIndex }}" class="m3-picker" />
+                </StackLayout>
+            </GridLayout>
+
+            <GridLayout columns="*, *" marginTop="20">
+                <Button col="0" text="Releer/Obtener" tap="{{ onRetrieve }}" class="btn-primary" margin="5" backgroundColor="#6750A4" color="white" marginTop="0"/>
+                <Button col="1" text="Guardar" tap="{{ onSave }}" class="btn-primary" margin="5" marginTop="0" />
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
